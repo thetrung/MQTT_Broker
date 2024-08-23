@@ -6,7 +6,8 @@ services:
             - 8883:8883
             - 9001:9001
         volumes:
-            - ./config:/mosquitto/config
+            - ./passwd_file:/mosquitto/passwd_file
+            - ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf
             - ./data:/mosquitto/data
             - ./log:/mosquitto/log
         networks:
