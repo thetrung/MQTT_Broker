@@ -7,14 +7,18 @@ Remember to open port `1883` to remote if using localhost. Change to any other p
 
 ### COMMANDS
 
-- To whip-up Bash : 
+- To run with `docker-compose` inside this project folder :
 
-        sudo docker exec -it mosquitto-mosquitto-1 sh
+        sudo docker compose up -d
 
 - To run container manually, use `run.sh` or :
 
         sudo docker run -it -p 1883:1883 -p 9001:9001 -v ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf -v /mosquitto/data -v /mosquitto/log eclipse-mosquitto
 
-- To subscribe from inside container :
+- To whip-up Bash : 
+
+        sudo docker exec -it mosquitto-mosquitto-1 sh
+  
+- To subscribe a topic (ex: `test`) from inside container :
 
         mosquitto_sub -t test 
