@@ -13,7 +13,7 @@ Remember to open port `1883` to remote if using localhost. Change to any other p
 
 - To run container manually, use `run.sh` or :
 
-        sudo docker run -it -p 1883:1883 -p 9001:9001 -v ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf -v /mosquitto/data -v /mosquitto/log eclipse-mosquitto
+        sudo docker run -it -p 1883:1883 -p 9001:9001 -v ./config/mosquitto.conf:/mosquitto/config/mosquitto.conf -v ./data:/mosquitto/data -v ./log:/mosquitto/log -v ./passwd_file:/mosquitto/passwd_file eclipse-mosquitto
 
 - To whip-up Bash : 
 
